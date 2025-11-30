@@ -2,35 +2,3 @@
 build/
 build-*/
 cmake-build-*/
-
-# CMake generated files
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-Makefile
-*.cmake
-
-# Compiled libraries
-*.a
-*.so
-*.dylib
-*.lib
-*.dll
-
-# Compiled executables
-SmartHome
-*.exe
-*.out
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Ninja build files
-.ninja_deps
-.ninja_log
-build.ninja
-rules.ninja
