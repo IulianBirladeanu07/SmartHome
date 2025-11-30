@@ -1,12 +1,16 @@
-class DoorLock {
+#include <string>
+#include "Device.hpp"
+
+class DoorLock : public Device{
     private:
         bool locked;
-        std::mutex doorMutex;
+        mutable std::mutex doorMutex;
 
     public:
         void lock();
         void unlock();
         bool isLocked();
 
-        DoorLock();
+        std::string getStatus() const override;
+        DoorLock(const std::string& name, const std::string& manufacturer, DeviceType type);
 };

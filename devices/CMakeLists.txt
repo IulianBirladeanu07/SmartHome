@@ -1,4 +1,5 @@
 add_library(devices 
+    source/Device.cpp
     source/Light.cpp
     source/Camera.cpp
     source/DoorLock.cpp

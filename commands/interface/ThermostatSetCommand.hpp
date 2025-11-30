@@ -1,3 +1,6 @@
+#ifndef THERMOSTAT_SET_COMMAND_HPP
+#define THERMOSTAT_SET_COMMAND_HPP
+
 #include <memory>
 
 #include "Thermostat.hpp"
@@ -13,5 +16,8 @@ class ThermostatSetCommand: public Command {
         void execute() override;
         void undo() override;
 
+        ThermostatSetCommand(std::shared_ptr<Thermostat> thermostat, double targetTemperature);
         ~ThermostatSetCommand();
 };
+
+#endif

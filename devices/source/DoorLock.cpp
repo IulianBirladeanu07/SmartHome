@@ -3,7 +3,9 @@
 
 #include "DoorLock.hpp"
 
-DoorLock::DoorLock() : locked(false) {}
+DoorLock::DoorLock(const std::string& name, const std::string& manufacturer, DeviceType type) : Device(name, manufacturer, type), locked(false) {
+    std::cout << "DoorLock::constructed!" << std::endl;
+}
 
 bool DoorLock::isLocked() {
     std::lock_guard<std::mutex> lock(doorMutex);
@@ -28,4 +30,9 @@ void DoorLock::unlock() {
     } else {
         std::cout << "Dor is already unlocked" << std::endl;
     }
+}
+
+std::string DoorLock::getStatus() const {
+    std::lock_guard<std::mutex> lock(doorMutex);
+    return locked ? "Locked" : "Unlocked";
 }

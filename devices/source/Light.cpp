@@ -1,7 +1,9 @@
 #include <iostream>
 #include "Light.hpp"
 
-Light::Light() : isLightOn(false), brightness(0) {}
+Light::Light(const std::string& name, const std::string& manufacturer, DeviceType type) : Device(name, manufacturer, type), isLightOn(false), brightness(0) {
+    std::cout << "Light::constructed!" << std::endl;
+}
 
 void Light::on() {
     std::lock_guard<std::mutex> lock(lightMutex);
@@ -39,4 +41,9 @@ void Light::dim(int level) {
 int Light::getBrightness() {
     std::lock_guard<std::mutex> lock(lightMutex);
     return brightness;
+}
+
+std::string Light::getStatus() const {
+    std::lock_guard<std::mutex> lock(lightMutex);
+    return isLightOn ? "ON" : "OFF";
 }

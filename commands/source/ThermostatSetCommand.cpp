@@ -1,5 +1,6 @@
+#include <iostream>
 #include "ThermostatSetCommand.hpp"
-
+            
 ThermostatSetCommand::ThermostatSetCommand(std::shared_ptr<Thermostat> thermostat, double targetTemperature)  :
                                             thermostat(thermostat),
                                             previousTemperature(0),

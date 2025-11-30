@@ -1,13 +1,18 @@
 #include <mutex>
+#include <string>
 
-class Camera {
+#include "Device.hpp"
+
+class Camera: public Device {
     private:
         bool recording;
-        std::mutex cameraMutex;
+        mutable std::mutex cameraMutex;
     public:
+        Camera(const std::string& name, const std::string& manufacturer, DeviceType type);
+
         bool isRecording();
         void stopRecording();
         void startRecording();
 
-        Camera();
+        std::string getStatus() const override;
 };

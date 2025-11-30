@@ -3,7 +3,9 @@
 
 #include "Camera.hpp" 
 
-Camera::Camera() : recording(true) {}
+Camera::Camera(const std::string& name, const std::string& manufacturer, DeviceType type) : Device(name, manufacturer, type) , recording(false) {
+    std::cout << "Camera::constructed!" << std::endl;
+}
 
 bool Camera::isRecording() {
     std::lock_guard<std::mutex> lock(cameraMutex);
@@ -28,4 +30,9 @@ void Camera::startRecording() {
     } else {
         std::cout << "Camera is already recording" << std::endl;
     }
+}
+
+std::string Camera::getStatus() const {
+    std::lock_guard<std::mutex> lock(cameraMutex);
+    return recording ? "Recordin" : "IDLE";
 }

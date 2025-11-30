@@ -4,7 +4,9 @@
 #define MIN_TEMP 15
 #define MAX_TEMP 30
 
-Thermostat::Thermostat() : temperature(0) {}
+Thermostat::Thermostat(const std::string& name, const std::string& manufacturer, DeviceType type) : Device(name, manufacturer, type), temperature(0) {
+    std::cout << "Thermostat::constructed!" << std::endl;
+}
 
 void Thermostat::setTemperature(double newTemperature) {
     std::lock_guard<std::mutex> lock(temperatureMutex);
@@ -19,4 +21,9 @@ void Thermostat::setTemperature(double newTemperature) {
 double Thermostat::getTemperature() {
     std::lock_guard<std::mutex> lock(temperatureMutex);
     return temperature;
+}
+
+std::string Thermostat::getStatus() const {
+    std::lock_guard<std::mutex> lock(temperatureMutex);
+    return std::to_string(static_cast<int>(temperature)) + "°C";
 }

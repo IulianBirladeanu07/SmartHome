@@ -1,13 +1,17 @@
 #include <mutex>
+#include <string>
 
-class Thermostat {
+#include "Device.hpp"
+
+class Thermostat : public Device {
     private:
         double temperature;
-        std::mutex temperatureMutex;
+        mutable std::mutex temperatureMutex;
 
     public:
         void setTemperature(double newTemperature);
         double getTemperature();
 
-        Thermostat();
+        std::string getStatus() const override;
+        Thermostat(const std::string& name, const std::string& manufacturer, DeviceType type);
 };

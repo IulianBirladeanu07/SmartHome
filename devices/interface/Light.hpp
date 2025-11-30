@@ -1,10 +1,13 @@
 #include <mutex>
+#include <string>
 
-class Light {
+#include "Device.hpp"
+
+class Light : public Device {
     private:
         int brightness;
         bool isLightOn;
-        std::mutex lightMutex;
+        mutable std::mutex lightMutex;
 
     public:
         void on();
@@ -12,5 +15,7 @@ class Light {
         void dim(int brightnessLevel);
         
         int getBrightness();
-        Light();
+
+        std::string getStatus() const override;
+        Light(const std::string& name, const std::string& manufacturer, DeviceType type);
 };
