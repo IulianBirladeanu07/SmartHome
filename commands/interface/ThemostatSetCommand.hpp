@@ -1,8 +1,12 @@
-#include "../devices/Thermostat.hpp"
+#include <memory>
+
+#include "Thermostat.hpp"
 #include "Command.hpp"
 
 class ThermostatSetCommand: public Command {
     private:
+        double previousTemperature;
+        double targetTemperature;
         std::shared_ptr<Thermostat> thermostat;
     
     public:

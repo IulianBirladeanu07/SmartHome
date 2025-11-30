@@ -16,13 +16,13 @@ add_executable(SmartHome
 target_link_libraries(SmartHome
     devices
     commands
-    observers
-    controllers
+    # observers
+    # controllers
 )
 
 target_include_directories(SmartHome PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/devices/interface
     ${CMAKE_CURRENT_SOURCE_DIR}/commands/interface
-    ${CMAKE_CURRENT_SOURCE_DIR}/observers/interface
-    ${CMAKE_CURRENT_SOURCE_DIR}/controllers/interface
+    # ${CMAKE_CURRENT_SOURCE_DIR}/observers/interface
+    # ${CMAKE_CURRENT_SOURCE_DIR}/controllers/interface
 )
