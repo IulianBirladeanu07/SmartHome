@@ -1,0 +1,22 @@
+# --- Build directories ---
+build/
+build-*/
+cmake-build*/
+out/
+bin/
+lib/
+
+# --- CMake generated files ---
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+CTestTestfile.cmake
+CTestCostData.txt
+Makefile
+
+# Ninja specific
+.ninja_log
+.ninja_deps
+rules.ninja
+build.ninja
