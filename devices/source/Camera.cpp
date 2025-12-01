@@ -34,5 +34,5 @@ void Camera::startRecording() {
 
 std::string Camera::getStatus() const {
     std::lock_guard<std::mutex> lock(cameraMutex);
-    return recording ? "Recordin" : "IDLE";
+    return recording ? "Recording" : "IDLE";
 }
