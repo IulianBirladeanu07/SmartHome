@@ -1,3 +1,6 @@
+#ifndef LIGHT_ON_COMMAND_HPP
+#define LIGHT_ON_COMMAND_HPP
+
 #include <memory>
 
 #include "Light.hpp"
@@ -15,3 +18,5 @@ class LightOnCommand: public Command {
         void execute() override;
         void undo() override;
 };
+
+#endif // LIGHT_ON_COMMAND_HPP

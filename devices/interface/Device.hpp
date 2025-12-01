@@ -1,3 +1,6 @@
+#ifndef DEVICE_HPP
+#define DEVICE_HPP
+
 #include <iostream>
 #include <string>
 
@@ -26,3 +29,5 @@ class Device {
         virtual std::string getStatus() const = 0;
         virtual void printInfo() const;
 };
+
+#endif // DEVICE_HPP

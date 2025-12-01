@@ -1,3 +1,6 @@
+#ifndef CAMERA_HPP
+#define CAMERA_HPP
+
 #include <mutex>
 #include <string>
 
@@ -16,3 +19,5 @@ class Camera: public Device {
 
         std::string getStatus() const override;
 };
+
+#endif // CAMERA_HPP

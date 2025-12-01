@@ -1,3 +1,6 @@
+#ifndef CAMERA_START_COMMAND_HPP
+#define CAMERA_START_COMMAND_HPP
+
 #include <memory>
 
 #include "Camera.hpp"
@@ -14,3 +17,5 @@ class CameraStartCommand: public Command {
 
         CameraStartCommand(std::shared_ptr<Camera> camera);
 };
+
+#endif // CAMERA_START_COMMAND_HPP

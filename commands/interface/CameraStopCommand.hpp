@@ -1,3 +1,6 @@
+#ifndef CAMERA_STOP_COMMAND_HPP
+#define CAMERA_STOP_COMMAND_HPP
+
 #include <memory>
 
 #include "Camera.hpp"
@@ -15,3 +18,5 @@ class CameraStopCommand: public Command {
         CameraStopCommand(std::shared_ptr<Camera> camera);
         ~CameraStopCommand();
 };
+
+#endif // CAMERA_STOP_COMMAND_HPP

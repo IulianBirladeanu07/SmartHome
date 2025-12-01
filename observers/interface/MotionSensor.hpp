@@ -1,0 +1,4 @@
+#ifndef MOTION_SENSOR_HPP
+#define MOTION_SENSOR_HPP
+
+#endif // MOTION_SENSOR_HPP

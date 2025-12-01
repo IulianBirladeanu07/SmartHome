@@ -1,0 +1,4 @@
+#ifndef DOOR_SENSOR_HPP
+#define DOOR_SENSOR_HPP
+
+#endif // DOOR_SENSOR_HPP

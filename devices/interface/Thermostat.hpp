@@ -1,3 +1,6 @@
+#ifndef THERMOSTAT_HPP
+#define THERMOSTAT_HPP
+
 #include <mutex>
 #include <string>
 
@@ -15,3 +18,5 @@ class Thermostat : public Device {
         std::string getStatus() const override;
         Thermostat(const std::string& name, const std::string& manufacturer, DeviceType type);
 };
+
+#endif // THERMOSTAT_HPP

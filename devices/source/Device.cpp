@@ -1,8 +1,8 @@
 #include "Device.hpp"
 
 Device::Device(const std::string& name, const std::string& manufacturer, DeviceType type) : name(name),
-                                                                                            type(type),
-                                                                                            manufacturer(manufacturer) {
+                                                                                            manufacturer(manufacturer),
+                                                                                            type(type) {
     std::cout << "Device::constructed!" << std::endl;
 }
 

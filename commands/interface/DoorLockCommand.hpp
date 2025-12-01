@@ -1,3 +1,6 @@
+#ifndef DOOR_LOCK_COMMAND_HPP
+#define DOOR_LOCK_COMMAND_HPP
+
 #include <memory>
 
 #include "DoorLock.hpp"
@@ -15,3 +18,5 @@ class DoorLockCommand: public Command {
         DoorLockCommand(std::shared_ptr<DoorLock> doorLock);
         ~DoorLockCommand();
 };
+
+#endif // DOOR_LOCK_COMMAND_HPP

@@ -1,3 +1,6 @@
+#ifndef LIGHT_DIM_COMMAND_HPP
+#define LIGHT_DIM_COMMAND_HPP
+
 #include <memory>
 
 #include "Light.hpp"
@@ -16,3 +19,5 @@ class LightDimCommand: public Command {
         LightDimCommand(std::shared_ptr<Light> light, int targetBrightness);
         ~LightDimCommand();
 };
+
+#endif // LIGHT_DIM_COMMAND_HPP

@@ -1,3 +1,6 @@
+#ifndef LIGHT_HPP
+#define LIGHT_HPP
+
 #include <mutex>
 #include <string>
 
@@ -19,3 +22,5 @@ class Light : public Device {
         std::string getStatus() const override;
         Light(const std::string& name, const std::string& manufacturer, DeviceType type);
 };
+
+#endif // LIGHT_HPP

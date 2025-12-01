@@ -1,3 +1,6 @@
+#ifndef LIGHT_OFF_COMMAND_HPP
+#define LIGHT_DIM_COMMAND_HPP
+
 #include <memory>
 
 #include "Light.hpp"
@@ -15,3 +18,5 @@ class LightOffCommand: public Command {
         LightOffCommand(std::shared_ptr<Light> light);
         ~LightOffCommand();
 };
+
+#endif // LIGHT_DIM_COMMAND_HPP
