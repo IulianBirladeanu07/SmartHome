@@ -2,7 +2,11 @@
 #include "CameraStopCommand.hpp"
 
 CameraStopCommand::CameraStopCommand(std::shared_ptr<Camera> camera) : camera(camera) {
-    std::cout << "Camera was constructed" << std::endl;
+    std::cout << "CameraStopCommand::constructed" << std::endl;
+}
+
+CameraStopCommand::~CameraStopCommand() {
+    std::cout << "CameraStopCommand::deconstructed" << std::endl;
 }
 
 void CameraStopCommand::execute() {

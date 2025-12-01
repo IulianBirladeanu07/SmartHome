@@ -8,6 +8,7 @@ add_library(commands
     source/LightOnCommand.cpp
     source/ThermostatSetCommand.cpp
 )
+
 target_link_libraries(commands PUBLIC 
     devices
 )
