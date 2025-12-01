@@ -6,18 +6,19 @@
 #include <vector>
 
 #include "Observer.hpp"
+#include "SensorEvent.hpp"
 
 class Subject {
     protected:
-        std::vector<std::shared_ptr<Observer>> observers;
+        std::vector<Observer*> observers;
         mutable std::mutex observersMutex;
 
     public:
         virtual ~Subject() = default;
 
-        void attach(std::shared_ptr<Observer> observer);
-        void detach(std::shared_ptr<Observer> observer);
-        void notifyAll(const std::string& event);
+        void attach(Observer* observer);
+        void detach(Observer* observer);
+        void notifyAll(SensorEvent event);
 };
 
 #endif // SUBJECT_HPP

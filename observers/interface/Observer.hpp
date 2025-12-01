@@ -2,11 +2,12 @@
 #define OBSERVER_HPP
 
 #include <string>
+#include "SensorEvent.hpp"
 
 class Observer {
     public:
         virtual ~Observer() = default;
-        virtual void update(const std::string& event) = 0;
+        virtual void update(SensorEvent event) = 0;
 };
 
 #endif // OBSERVER_HPP

@@ -15,7 +15,7 @@ class AutomationRule: public Observer {
     public:
         AutomationRule(std::shared_ptr<Command> command, const std::string& ruleName);
 
-        void update(const std::string& event) override;
+        void update(SensorEvent event) override;
         std::string getRuleName() const;
 
 };

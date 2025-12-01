@@ -2,13 +2,13 @@
 #include <algorithm>
 #include "Subject.hpp"
 
-void Subject::attach(std::shared_ptr<Observer> observer) {
+void Subject::attach(Observer* observer) {
     std::lock_guard<std::mutex> lock(observersMutex);
     observers.push_back(observer);
     std::cout << "Observer attached!" << std::endl; 
 }
 
-void Subject::detach(std::shared_ptr<Observer> observer) {
+void Subject::detach(Observer* observer) {
     std::lock_guard<std::mutex> lock(observersMutex);
     auto it = std::remove(observers.begin(), observers.end(), observer);
     if(it != observers.end()) {
@@ -17,7 +17,7 @@ void Subject::detach(std::shared_ptr<Observer> observer) {
     }
 }
 
-void Subject::notifyAll(const std::string& event) {
+void Subject::notifyAll(SensorEvent event) {
     std::lock_guard<std::mutex> lock(observersMutex);
 
     for(auto& observer: observers) {
