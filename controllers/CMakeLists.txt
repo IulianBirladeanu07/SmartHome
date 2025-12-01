@@ -1,6 +1,5 @@
 add_library(controllers
     source/HomeController.cpp
-    source/SecurityManager.cpp
 )
 
 target_link_libraries(controllers PUBLIC

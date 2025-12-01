@@ -40,7 +40,7 @@ void HomeController::listAllDevices() const {
     for(const auto& device: devices) {
         device->printInfo();
     }
-    std::cout << "\nTotal: " << devices.size() << "device(s)" << std::endl;
+    std::cout << "\nTotal: " << devices.size() << " device(s)" << std::endl;
 }
 
 int HomeController::getDeviceCount() const {
