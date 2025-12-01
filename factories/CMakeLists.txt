@@ -1,5 +1,5 @@
 add_library(factories
-    source/PhillipsFactory.cpp
+    source/PhilipsFactory.cpp
     source/LIFXFactory.cpp
     source/NestFactory.cpp
     source/RingFactory.cpp

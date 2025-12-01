@@ -1,19 +1,23 @@
 #include <iostream>
-#include <memory>
 #include <algorithm>
 
+#include "DeviceFactory.hpp"
+#include "PhilipsFactory.hpp"
 #include "HomeController.hpp"
-#include "Thermostat.hpp"
-#include "Light.hpp"
 
 int main() {
     HomeController& home = HomeController::getInstance();
+    PhilipsFactory philips;
     
-    auto light = std::make_shared<Light>("Light", "Phillips", DeviceType::LIGHT);
-    auto thermostat = std::make_shared<Thermostat>("Thermostat", "LEAP", DeviceType::THERMOSTAT);
+    auto light = philips.createDevice(DeviceType::LIGHT);
+    auto thermostat = philips.createDevice(DeviceType::THERMOSTAT);
     
-    home.registerDevice(light);
-    home.registerDevice(thermostat);
+    if(light) {
+        home.registerDevice(light);
+    } 
+    else if(thermostat) {
+        home.registerDevice(thermostat);
+    }
     
     home.listAllDevices();
 
