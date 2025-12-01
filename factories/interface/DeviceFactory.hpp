@@ -2,7 +2,12 @@
 #define DEVICE_FACTORY_HPP
 
 #include <memory>
+
+#include "Light.hpp"
 #include "Device.hpp"
+#include "Camera.hpp"
+#include "DoorLock.hpp"
+#include "Thermostat.hpp"
 
 class DeviceFactory {
     public:
